@@ -1,0 +1,10 @@
+https://www.npmjs.com/package/webpack-jquery-ui
+
+https://github.com/RubaXa/Sortable
+https://github.com/ilikenwf/nestedSortable
+https://github.com/teleport/react-dnd-treeview
+
+https://github.com/bradwestfall/CSS-Tricks-React-Series/blob/master/guide-3-redux/app/ - пример приложения на Redux'е
+
+https://pqx.github.io/react-ui-tree/
+https://github.com/storybooks/react-treebeard
