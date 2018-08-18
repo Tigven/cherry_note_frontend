@@ -20,9 +20,10 @@ export class NotesTree extends Component {
 
 export class NoteEditor extends Component {
   render() {
+    const content = this.props.noteInfo.content || 'CherryNote Web Editor';
     return (
       <div className='note-edutor'>
-      	<p>NoteEditor</p>
+      	<p>{content}</p>
       </div>
     );
   }

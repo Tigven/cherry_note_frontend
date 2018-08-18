@@ -1,6 +1,6 @@
 import config from './config';
 import store from './store';
-import { showAuthModal } from './actions/modal-actions';
+import { showAuthModal, updateNoteSuccess } from './actions/modal-actions';
 
 const api = (() => {
     return  {
@@ -23,10 +23,8 @@ const api = (() => {
             return url;
         },
 
-        apiRequest: function(url, respHandler, method, body, headers) {
+        apiRequest: function(url, respHandler, method='GET', body, headers={}) {
             const _this = this;
-            if (!method) method = 'GET';
-            if (!headers) headers = {};
 
             let bodyMethods = ['POST', 'PUT'];
             let methods = ['GET', 'DELETE'].concat(bodyMethods);
@@ -91,10 +89,17 @@ const api = (() => {
         getNotesList: function(handler) {
             this.apiRequest('notes/', handler);
         },
+
+        getNoteInfo: function(noteId, handler) {
+            if (!noteId) return;
+            const urlPath = 'notes/' + noteId + '/';
+            this.apiRequest(urlPath, handler);
+        },
         
         authorize: function(username, password, handler) {
             const _this = this;
             const body = JSON.stringify({'username': username, 'password': password});
+
             this.apiRequest('token-auth/', function(resp) {
                 if (resp.token) {
                     _this.setAuthToken(resp.token);
@@ -102,6 +107,17 @@ const api = (() => {
                 }
                 if (handler) handler(resp);
             }, 'POST', body);
+        },
+
+        updateNote: function(noteInfo, handler) {
+            const urlPath = 'notes/' + noteInfo.id + '/';
+            const body = JSON.stringify(noteInfo);
+
+            this.apiRequest(urlPath, function(resp) {
+                if (handler)
+                    handler(resp);
+                //store.dispatch(updateNoteSuccess(resp));
+            }, 'PUT', body);
         }
     };
 })();

@@ -2,9 +2,7 @@ import * as types from '../actions/action-types';
 
 const initialState = {
   notes: [],
-  noteInfo: {
-    //
-  }
+  currentNoteInfo: {}
 };
 
 const noteReducer = function(state = initialState, action) {
@@ -19,7 +17,7 @@ const noteReducer = function(state = initialState, action) {
       return Object.assign({}, state, { notes: newNotes });
 
     case types.RETREIVE_NOTE_SUCCESS:
-      return Object.assign({}, state, { noteInfo: action.noteInfo });
+      return Object.assign({}, state, { currentNoteInfo: action.noteInfo });
 
   }
 

@@ -8,3 +8,6 @@ https://github.com/bradwestfall/CSS-Tricks-React-Series/blob/master/guide-3-redu
 
 https://pqx.github.io/react-ui-tree/
 https://github.com/storybooks/react-treebeard
+
+https://github.com/froala/wysiwyg-editor - текстовый редактор
+https://github.com/quilljs/quill

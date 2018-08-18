@@ -1,0 +1,86 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+.f-no-select {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.m-tree {
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.m-draggable {
+  position: absolute;
+  opacity: 0.8;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.m-node.placeholder > * {
+  visibility: hidden;
+}
+.m-node.placeholder {
+  border: 1px dashed #ccc;
+}
+.m-node .inner {
+  position: relative;
+  cursor: pointer;
+  padding-left: 10px;
+}
+.m-node .collapse {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+.m-node .caret-right:before {
+  content: '\25B8';
+}
+.m-node .caret-down:before {
+  content: '\25BE';
+}
+
+.active-node {
+    background-color: #51f951;
+    padding: 2px 15px 2px 5px;
+    border-radius: 5px;
+}
+
+.notes-tree {
+    display: inline-block;
+    width: 20%;
+    top: 0px;
+    position: absolute;
+}
+
+.note-editor {
+    display: inline-block;
+    width: 80%;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.quill {
+    height: 96.5%;
+}
+
+.m-node > .inner {
+    /*padding: 5px 0 5px 10px;*/
+    font-size: 1.2em;
+}
+.m-node > .inner:hover {
+  /*background: red;*/
+}

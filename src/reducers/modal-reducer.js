@@ -12,7 +12,6 @@ const modalReducer = function(state = initialState, action) {
       return Object.assign({}, state, {authShow: true});
 
     case types.HIDE_AUTH_MODAL:
-      console.log(state);
       return Object.assign({}, state, {authShow: false});
 
   }

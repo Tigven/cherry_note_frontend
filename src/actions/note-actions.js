@@ -20,3 +20,10 @@ export function retreiveNoteSuccess(noteInfo) {
     noteInfo
   };
 }
+
+export function UpdateNoteSuccess(noteInfo) {
+  return {
+    type: types.UPDATE_NOTE_SUCCESS,
+    noteInfo
+  };
+}
